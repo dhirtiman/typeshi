@@ -1,4 +1,4 @@
-function greet(name: string) {
+const  greet = (name: string) => {
     console.log("Hello, " + name);
 }
 
