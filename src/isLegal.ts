@@ -1,30 +1,48 @@
 function isLegal(user: User) {
-    if (user.age >= 18) {
-        console.log(user.firstName + " is legal");
-        return true;
-    } else {
-        console.log(user.firstName + " is not legal");
-        return false;
-    }
+  if (user.age >= 18) {
+    return true;
+  }
+  return false;
 }
 
 interface User {
-    firstName: string;
-    lastName: string;
-    email?: string;
-    age: number;
+  firstName: string;
+  lastName: string;
+  email?: string;
+  age: number;
 }
 
-const user: User = {
-    firstName: "dhirtiman",
-    lastName: "khati",
-    email: "dhirtimankhati@gmail.com",
-    age: 22,
+const user1: User = {
+  firstName: "dhirtiman",
+  lastName: "khati",
+  email: "dhirtimankhati@gmail.com",
+  age: 22,
+};
+
+const user2: User = {
+  firstName: "lil",
+  lastName: "nigga",
+  age: 10,
+};
+
+const user3: User = {
+  firstName: "type",
+  lastName: "shi",
+  age: 18,
+};
+
+const user4: User = {
+  firstName: "sig",
+  lastName: "hiel",
+  age: 6,
+};
+
+const users: User[] = [user1, user2, user3, user4];
+
+function filterUsers(users: User[]) {
+  const filteredUsers = users.filter(isLegal);
+  return filteredUsers;
 }
 
-console.log(user);
-
-
-
-console.log(isLegal(user));
-
+const legalUsers = filterUsers(users);
+console.log("Legal users:", legalUsers);
