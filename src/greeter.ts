@@ -1,6 +1,7 @@
-const  greet = (name: string) => {
+const  greeter = (name: string) => {
     console.log("Hello, " + name);
 }
 
-greet("Dhirtiman");
+greeter("Dhirtiman");
 
+export default greeter;
